@@ -1,13 +1,12 @@
 <!-- Content area -->
 <div class="content d-flex justify-content-center align-items-center">
-
     <!-- Login form -->
-    <form class="login-form" action="login" method="POST">
+    <form class="login-form" action="register/submit" method="POST">
         <div class="card mb-0">
             <div class="card-body">
                 <div class="text-center mb-3">
-                    <i class="icon-reading icon-2x text-secondary border-secondary border-3 rounded-pill p-3 mb-3 mt-1"></i>
-                    <h5 class="mb-0">Login to your account</h5>
+                    <i class="icon-user-plus icon-2x text-secondary border-secondary border-3 rounded-pill p-3 mb-3 mt-1"></i>
+                    <h5 class="mb-0">Sign up your account</h5>
                     <span class="d-block text-muted">Enter your credentials below</span>
                 </div>
 
@@ -19,6 +18,13 @@
                 </div>
 
                 <div class="form-group form-group-feedback form-group-feedback-left">
+                    <input type="email" class="form-control" placeholder="E-mail" name="email">
+                    <div class="form-control-feedback">
+                        <i class="icon-envelop text-muted"></i>
+                    </div>
+                </div>
+
+                <div class="form-group form-group-feedback form-group-feedback-left">
                     <input type="password" class="form-control" placeholder="Password" name="password">
                     <div class="form-control-feedback">
                         <i class="icon-lock2 text-muted"></i>
@@ -26,12 +32,9 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                    <button type="submit" class="btn btn-primary btn-block">Sign up</button>
                 </div>
 
-                <div class="text-center">
-                    <a href="login_password_recover.html">Forgot password?</a>
-                </div>
             </div>
         </div>
     </form>

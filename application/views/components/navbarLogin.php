@@ -15,7 +15,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="navbar-nav-link">
+                <a href=<?php echo base_url('register'); ?> class="navbar-nav-link">
                     <i class="icon-user-plus"></i>
                     <span class="d-none d-lg-inline-block ml-2">Register</span>
                 </a>

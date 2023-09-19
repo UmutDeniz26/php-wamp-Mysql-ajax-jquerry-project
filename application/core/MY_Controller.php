@@ -8,34 +8,18 @@ class MY_Controller extends CI_Controller
         parent::__construct();
     }
 
-    public function check_login($username, $password, $loginData)
-    {
-
-        $username = "workInProgress";
-        $password = "workInProgress";
-
-        if ($loginData) {
-            $_SESSION['username'] = $username;
-            $_SESSION['password'] = $password;
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     public function LoadView($view, $title, $data = null)
     {
         $data['content'] = $view;
         $data['title'] = $title;
-        if (isset($loginData[0]) && isset($loginData[1])) {
-            $loginData = array(
-                'username' => $_SESSION['username'],
-                'password' => $_SESSION['password']
-            );
-            $data['loginData'] = $loginData;
-        }
+        $data['login'] = isset($_SESSION['username']) ? true : false;
 
-        $data['login'] = false;
+        //$data['tasks'] = 
+        $this->db->select('*');
+        $this->db->from('tasks');
+        $query = $this->db->get();
+        $data['tasks'] = $query->result();
+        
 
         if ($data['login'] == true) {
             return $this->load->view('components/core_view', $data);

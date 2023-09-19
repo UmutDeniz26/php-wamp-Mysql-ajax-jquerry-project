@@ -1,6 +1,7 @@
 <?php
 
-use App\Task\Task_m;
+use App\Task\Task_login_m;
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 //404 error at project/details/detail?id=1
@@ -13,10 +14,21 @@ class login extends MY_Controller
     }
     public function index()
     {
-        echo "username: ". $_POST['username'] .",". $_POST['password'];
-        
+        $task_login_m = new Task_login_m();
+        $password = $task_login_m->getPasswordHash($_POST['username']);
+        $_SESSION['login'] = false;
 
+        if (isset($password[0]->password)) {
+            if (password_verify($_POST['password'], $password[0]->password)) {
+                echo "password correct";
+                $_SESSION['username'] = $_POST['username'];
+                $_SESSION['login'] = true;
+                redirect(base_url());
+            } else {
+                redirect(base_url() . "?login=false");
+            }
+        } else {
+            redirect(base_url() . "?login=false&user-not-found");
+        }
     }
-    
 }
-?>
