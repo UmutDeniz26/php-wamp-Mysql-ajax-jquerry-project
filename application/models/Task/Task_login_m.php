@@ -21,9 +21,9 @@ class Task_login_m extends \Core_Model
         parent::__construct();
     }
 
-    public function getPasswordHash($username)
+    public function getSıngleDataWıthUsername($username,$target)
     {
-        $this->db->select('password');
+        $this->db->select($target);
         $this->db->from('user-login');
         $this->db->where('username', $username);
         $query = $this->db->get();
@@ -37,6 +37,7 @@ class Task_login_m extends \Core_Model
         );
         $this->db->insert('user-login', $data);
     }
+    
 }
 
 /* End of file Core_Model.php */

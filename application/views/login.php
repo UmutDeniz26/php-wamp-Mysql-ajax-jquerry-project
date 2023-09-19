@@ -27,7 +27,8 @@
 
                 <div class="form-group form-group-feedback form-group-feedback-left text-center">
                     <span class="d-block text-danger"><?php
-                                                        if ($_GET['login'] === "false") {
+
+                                                        if (@$_GET['login'] === "false") {
                                                             if ($_GET['userExists'] === "false") {
                                                                 echo "User not found";
                                                             } else {
@@ -35,7 +36,6 @@
                                                             }
                                                         }
                                                         ?></span>
-
                 </div>
 
                 <div class="form-group">

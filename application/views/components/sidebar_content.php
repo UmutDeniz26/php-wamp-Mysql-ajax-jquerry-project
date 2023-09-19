@@ -3,15 +3,15 @@
         <!-- User menu -->
         <div class="sidebar-section sidebar-user my-1">
             <div class="sidebar-section-body">
-                <div class="media">
-                    <a href="#" class="mr-3">
-                        <img src="../../../../global_assets/images/placeholders/placeholder.jpg" class="rounded-circle"
+                <div class="media align-items-center">
+                    <a href="#" class="mr-3 "><!--//d-flex">-->
+                        <img src= <?php echo loadVendor("placeholders/placeholder.jpg","images")?> class="rounded-circle"
                             alt="">
                     </a>
                     <div class="media-body">
-                        <div class="font-weight-semibold">Victoria Baker</div>
-                        <div class="font-size-sm line-height-sm opacity-50">
-                            Senior developer
+                        <div class="font-weight-semibold"><?php echo $_SESSION['username']; ?></div>
+                        <div class="font-size-xs line-height-sm opacity-50">
+                            <?php echo $_SESSION['email']; ?>
                         </div>
                     </div>
                 </div>
@@ -26,8 +26,7 @@
 
                 <!-- Main -->
                 <li class="nav-item-header">
-                    <div class="text-uppercase font-size-xs line-height-xs">Main</div> <i class="icon-menu"
-                        title="Main"></i>
+                    <div class="text-uppercase font-size-xs line-height-xs">Main</div> <i class="icon-menu" title="Main"></i>
                 </li>
                 <li class="nav-item">
                     <a href="/project/" class="nav-link active">

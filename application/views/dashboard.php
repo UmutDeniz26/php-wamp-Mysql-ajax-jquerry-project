@@ -7,6 +7,7 @@ function calculateDaysLeft($startDate, $endDate)
 	$days = $diff->format("%a");
 	return $days;
 }
+
 function render_table($tasks)
 {
 	foreach ($tasks as $key => $value) {
@@ -96,7 +97,6 @@ function render_table($tasks)
 </div>
 <script>
 	state = [];
-
 	function updateStatus(input_id, input_status) {
 		updateTask(input_id, null, null, null, null, null, !input_status);
 		getTableElements();
