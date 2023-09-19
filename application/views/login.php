@@ -28,7 +28,7 @@
                 <div class="form-group form-group-feedback form-group-feedback-left text-center">
                     <span class="d-block text-danger"><?php
                                                         if ($_GET['login'] === "false") {
-                                                            if (@$_GET['user-not-found'] === "true") {
+                                                            if ($_GET['userExists'] === "false") {
                                                                 echo "User not found";
                                                             } else {
                                                                 echo "Wrong password";
@@ -40,10 +40,6 @@
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                </div>
-
-                <div class="text-center">
-                    <a href="login_password_recover.html">Forgot password?</a>
                 </div>
             </div>
         </div>

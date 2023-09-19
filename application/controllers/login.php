@@ -20,15 +20,16 @@ class login extends MY_Controller
 
         if (isset($password[0]->password)) {
             if (password_verify($_POST['password'], $password[0]->password)) {
-                echo "password correct";
+
                 $_SESSION['username'] = $_POST['username'];
                 $_SESSION['login'] = true;
                 redirect(base_url());
+        
             } else {
-                redirect(base_url() . "?login=false");
+                redirect(base_url() . "?login=false&userExists=true");
             }
         } else {
-            redirect(base_url() . "?login=false&user-not-found");
+            redirect(base_url() . "?login=false&userExists=false");
         }
     }
 }
