@@ -14,7 +14,14 @@ class Welcome extends MY_Controller
 	{
 		if (isset($_SESSION['login'])) {
 			if ($_SESSION['login'] == true) {
-				$this->LoadView('dashboard', 'Ana Sayfa');
+
+				//$data['tasks'] = 
+				$this->db->select('*');
+				$this->db->from('tasks');
+				$query = $this->db->get();
+				$data['tasks'] = $query->result();
+
+				$this->LoadView('dashboard', 'Ana Sayfa', $data);
 			} else {
 				$this->LoadView('login', 'Ana Sayfa');
 			}

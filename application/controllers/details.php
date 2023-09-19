@@ -1,6 +1,8 @@
 <?php
 
 use App\Task\Task_m;
+use SebastianBergmann\Environment\Console;
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 //404 error at project/details/detail?id=1
@@ -21,6 +23,7 @@ class details extends MY_Controller
         $input_id = $_GET['id'];
         $task_m = new Task_m();
         $tasks = $task_m->getTasks($input_id);
+        
         $data['tasks'] = $tasks;
         
         $this->LoadView('details', 'Ana Sayfa', $data);

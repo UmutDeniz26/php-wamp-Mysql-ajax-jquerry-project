@@ -14,13 +14,6 @@ class MY_Controller extends CI_Controller
         $data['title'] = $title;
         $data['login'] = isset($_SESSION['username']) ? true : false;
 
-        //$data['tasks'] = 
-        $this->db->select('*');
-        $this->db->from('tasks');
-        $query = $this->db->get();
-        $data['tasks'] = $query->result();
-        
-
         if ($data['login'] == true) {
             return $this->load->view('components/core_view', $data);
         } else {

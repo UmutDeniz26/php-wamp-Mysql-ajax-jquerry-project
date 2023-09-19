@@ -23,20 +23,22 @@
 				<div class="form-group row">
 					<label class="col-form-label col-lg-2">Content</label>
 					<div class="col-lg-10">
-						<textarea rows="3" cols="3" class="form-control" placeholder="<?php echo $tasks[0]->description; ?>"
+						<textarea rows="3" cols="3" class="form-control" placeholder="<?php echo $tasks[0]->content; ?>"
 						readonly></textarea>
 					</div>
 				</div>
+				
 
 
 				<div class="form-group row">
 					<label class="col-form-label col-lg-2">Deadline</label>
 					<div class="col-lg-10">
-						<input type="date" class="form-control" readonly value="<?php echo $tasks[0]->deadline; ?>"
+						<input type="text" class="form-control" readonly value="<?php echo $tasks[0]->deadline;
+						
+						?>"
 						name="deadline">
 					</div>
 				</div>
-
 
 				<div class="form-group row">
 					<label class="col-form-label col-lg-2">Create Date</label>

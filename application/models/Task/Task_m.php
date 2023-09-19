@@ -26,9 +26,11 @@ class Task_m extends \Core_Model
         // select * from tasks
         $this->db->select('*');
         $this->db->from(self::Table);
+        
         if (isset($id)) {
             $this->db->where('id', $id);
         }
+
         $query = $this->db->get();
 
         return $query->result();

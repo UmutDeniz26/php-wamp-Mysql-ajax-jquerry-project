@@ -45,15 +45,13 @@ function render_table($tasks)
 }
 ?>
 
-<div id="container" class="col-md">
+<div id="container">
 	<div class="card">
 		<div class="card-header">
 			<h5 class="card-title">Dashboard</h5>
 		</div>
-
-		<div class="card dropdown-scrollable">
-
-			<table class="table datatable-ajax">
+		<div class="card dataTables_scrollBody" style="position: relative; overflow: auto; max-height: 600px; height: 500px; width: 100%;">
+			<table class="table table datatable-scroll-y dataTable no-footer">
 				<thead>
 					<tr>
 						<th>#</th>
@@ -146,7 +144,7 @@ function render_table($tasks)
 		data.forEach(element => {
 			document.getElementById(`elementid${element.id}`).children[1].children[0].innerHTML = element.title;
 			document.getElementById(`elementid${element.id}`).children[2].innerHTML = element.description;
-			document.getElementById(`elementid${element.id}`).children[3].innerHTML = element.content;
+			document.getElementById(`elementid${element.id}`).children[3].innerHTML = (element.content).substring(0, 30) + "...";
 			document.getElementById(`elementid${element.id}`).children[4].innerHTML = element.deadline;
 			document.getElementById(`elementid${element.id}`).children[5].innerHTML = element.create_date;
 			document.getElementById(`elementid${element.id}`).children[4].innerHTML += `
