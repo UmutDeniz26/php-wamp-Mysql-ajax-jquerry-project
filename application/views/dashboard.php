@@ -51,58 +51,55 @@
 	state = [];
 
 	function fetchDataTable($document_) {
-
 		console.log("Document: " + $document_);
-		// Initialize DataTable
-			$($document_).DataTable({
-				"responsive": true,
-				"autoWidth": false,
-				"ajax": {
-					"url": "./getTableData",
-					"dataSrc": "",
-				},
-				"columns": [{
-						"data": "id"
-					},
-					{
-						"data": "title"
-					},
-					{
-						"data": "description"
-					},
-					{
-						"data": "content"
-					},
-					{
-						"data": "deadline",
-						"class":"text-center"
-					},
-					{
-						"data": "create_date"
-					},
-					{
-						"data": "status"
-					},
-					{
-						"data": "action"
-					}
-				]
-			});
 
+		// Initialize DataTable
+		$($document_).DataTable({
+			"responsive": true,
+			"autoWidth": false,
+			"ajax": {
+				"url": "./getTableData",
+				"dataSrc": "",
+			},
+			"columns": [{
+					"data": "id"
+				},
+				{
+					"data": "title"
+				},
+				{
+					"data": "description"
+				},
+				{
+					"data": "content"
+				},
+				{
+					"data": "deadline",
+					"class": "text-center"
+				},
+				{
+					"data": "create_date"
+				},
+				{
+					"data": "status"
+				},
+				{
+					"data": "action"
+				}
+			]
+		});
 	}
 	fetchDataTable($dataTableName);
-
+	
 	function updateStatus(input_id, input_status) {
 		updateTask(input_id, null, null, null, null, null, !input_status);
-		fetchDataTable($dataTableName);
 	}
 
 	function updateDeadlineButton() {
 		id = window.state['id'];
 		deadline = document.getElementById('modalDeadline').value;
+		document.getElementsByClassName('deadlineText$' + id)[0].innerHTML = deadline;
 		updateTask(id, null, null, null, deadline);
-		fetchDataTable($dataTableName);
-		document.getElementById('modalDeadline').value = "";
 	}
 
 	function updateTask(id, title = null, description = null, content = null, deadline = null, create_date = null, status = null) {

@@ -37,7 +37,7 @@ class getTableData extends MY_Controller
 				</div>
 			</div>
 		</td>";
-            $tasks[$key]->deadline = date("Y-m-d", strtotime($tasks[$key]->deadline)) . "
+            $tasks[$key]->deadline ="<p class = 'deadlineText$".$tasks[$key]->id." m-0' >". date("Y-m-d", strtotime($tasks[$key]->deadline)) . "</p>
         <button type='button' class='btn btn-link' data-toggle='modal' data-target='#modal_default' 
         onclick='changeStateID(" . $tasks[$key]->id . ")'> <i class='icon-pencil7'></i></button>";
             $tasks[$key]->title = "<td name='title" . $tasks[$key]->id . "'><a href='./details/detail?id=" .
