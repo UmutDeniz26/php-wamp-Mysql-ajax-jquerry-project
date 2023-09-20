@@ -150,7 +150,7 @@ function render_table($tasks)
 			document.getElementById(`elementid${element.id}`).children[4].innerHTML += `
 
 				<button type='button' class="btn btn-link" data-toggle='modal' data-target='#modal_default'" 
-				onclick='changeStateID("` + element.id + `")'>Edit</button>`;
+				onclick='changeStateID("` + element.id + `")'> <i class='icon-pencil7'></i></button>`;
 		});
 	}
 

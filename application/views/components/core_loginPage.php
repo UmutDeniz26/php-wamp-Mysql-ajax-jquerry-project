@@ -16,9 +16,7 @@
 	<div class="page-content">
 		<div class="content-wrapper">
 			<div class="content-inner">
-
-				<?php $this->load->view($content); ?>
-
+				<?php $this->load->view($content);?>
 			</div>
 		</div>
 	</div>

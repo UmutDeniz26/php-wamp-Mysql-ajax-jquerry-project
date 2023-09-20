@@ -49,7 +49,7 @@
 				</div>
 				<div class="text-right">
 
-					<button type="submit" class="btn btn-primary">Submit <i class="icon-paperplane ml-8"></i></button>
+					<button type="submit" class="btn btn-primary">Submit<i class="icon-paperplane ml-8"></i></button>
 			</fieldset>
 		</form>
 	</div>
