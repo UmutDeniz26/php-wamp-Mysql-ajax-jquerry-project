@@ -51,12 +51,13 @@
 	state = [];
 
 	function fetchDataTable($document_) {
-		if (!$.fn.DataTable.isDataTable($document_)) {
-			console.log("Document: " + $document_);
-			// Initialize DataTable
+
+		console.log("Document: " + $document_);
+		// Initialize DataTable
 			$($document_).DataTable({
+				"responsive": true,
+				"autoWidth": false,
 				"ajax": {
-					"type": "GET",
 					"url": "./getTableData",
 					"dataSrc": "",
 				},
@@ -74,9 +75,7 @@
 					},
 					{
 						"data": "deadline",
-						"createdCell": function(td, cellData, rowData, row, col) {
-							$(td).attr('class', 'text-center');
-						}
+						"class":"text-center"
 					},
 					{
 						"data": "create_date"
@@ -89,7 +88,7 @@
 					}
 				]
 			});
-		}
+
 	}
 	fetchDataTable($dataTableName);
 
