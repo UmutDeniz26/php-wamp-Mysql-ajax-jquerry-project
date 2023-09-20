@@ -18,7 +18,7 @@
 				<div class="form-group row">
 					<label class="col-form-label col-lg-2">Content</label>
 					<div class="col-lg-10">
-						<textarea rows="3" cols="3" class="form-control" placeholder="<?php echo $tasks[0]->description; ?>"></textarea>
+						<textarea rows="3" cols="3" class="form-control" placeholder="<?php echo $tasks[0]->content; ?>" name ="content"></textarea>
 					</div>
 				</div>
 				<div class="form-group row">
@@ -27,8 +27,6 @@
 						<input type="date" class="form-control" name="deadline" placeholder="<?php echo $tasks[0]->deadline; ?>">
 					</div>
 				</div>
-
-				<!-- Status -->
 				<div class="form-group row">
 					<label class="col-form-label col-lg-2">Status</label>
 					<div class='col-lg-10'>
@@ -38,8 +36,6 @@
 						</label>
 					</div>
 				</div>
-
-
 				<div class=" text-right">
 					<button type="submit" class="btn btn-primary">Submit <i class="icon-paperplane ml-8"></i></button>
 			</fieldset>
